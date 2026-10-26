@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "title": "One original example",
+  "questions": [{
+    "id": "example-q1", "module": 1,
+    "passage": "A club replaced its lengthy weekly announcement with a two-sentence update. Members could find the meeting time more quickly.",
+    "question": "Which word best describes the new announcement?",
+    "options": {"A": "Concise", "B": "Contradictory", "C": "Obsolete", "D": "Ambiguous"},
+    "answer": "A", "explanation": "The update conveys the necessary information in fewer words. This is an original example, not an official SAT question."
+  }]
+}

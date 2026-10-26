@@ -1,0 +1,6 @@
+{
+  "pack_id": "example", "version": "standard-import-1", "total": 1,
+  "categories": [{"id": "example", "name": "Original example", "description": "Import your own vocabulary", "accent": "#4f7c62", "words": [
+    {"sequence": 1, "term": "concise", "meaning": "brief and clear", "phonetic": "", "expansion": "Her concise note explained the change in two sentences."}
+  ]}]
+}
