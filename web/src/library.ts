@@ -61,6 +61,7 @@ export type SessionStats = {
   skipped: number;
 };
 
+// Branding changes must not create a new, empty browser study history.
 export const STORAGE_KEY = "sat-study-kit.web.v1";
 export const ACCENTS = ["#ea6a47", "#4f7c62", "#4c6f91", "#a56a83", "#b1843f"];
 export const SORT_OPTIONS: Array<{ key: Exclude<SortKey, "source">; label: string }> = [

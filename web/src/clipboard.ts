@@ -6,6 +6,7 @@ export type WordContent = {
   expansion: string;
 };
 export type GroupContent = { name: string; words: WordContent[] };
+// Keep the original wire IDs so copies from earlier releases still work.
 export type LibraryClipboard =
   | { format: "sat-study-kit/groups"; version: 1; groups: GroupContent[] }
   | { format: "sat-study-kit/words"; version: 1; words: WordContent[] };

@@ -1,4 +1,6 @@
-# SAT Study Kit
+# StudyWeave
+
+[GitHub repository](https://github.com/Revelete9/studyweave)
 
 A free, open-source local vocabulary trainer and Reading and Writing practice tool. Import
 your own material in documented formats, inspect the preview, and study. No AI
@@ -7,9 +9,13 @@ does not generate questions, guess answers or correct spelling automatically.
 One original word and one original question are bundled. This is not affiliated
 with the College Board and does not implement official adaptive scoring.
 
-Created by ColoredCloud, derived from personal SAT tools with AI-assisted
+Created by Revelete9, derived from personal SAT tools with AI-assisted
 refactoring. Original private tools and study data are kept separately.
 Released under the [MIT License](LICENSE).
+
+Previously named SAT Study Kit. The name has changed, but local data paths,
+browser storage keys and portable clipboard format IDs have not. Existing
+libraries, learning progress and shared groups remain compatible.
 
 ## Start
 
@@ -18,12 +24,12 @@ React website's typography, cards and colors inside a desktop window. Python
 still owns the local files, import validation, review queues and exam launcher.
 Nothing is uploaded. On Windows, the window uses the installed Edge WebView2 runtime.
 
-On Windows, double-click **Launch SAT Study Kit.cmd**. It uses a project-local
+On Windows, double-click **Launch StudyWeave.cmd**. It uses a project-local
 `.venv`, creates it with `python` if missing, and installs missing dependencies
 from `requirements.txt` into that same environment. First setup requires Internet
 access and Python 3.11+ with Tkinter. Later launches work offline when dependencies
 are already installed. It does not rely on the Codex runtime or change your global
-Python packages. `Launch SAT Study Kit.cmd --check` checks setup without opening
+Python packages. `Launch StudyWeave.cmd --check` checks setup without opening
 a window. If a Python dependency is missing, run this launcher again rather than
 installing the unrelated package named `webview`; the package is **pywebview**.
 

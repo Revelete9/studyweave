@@ -11,7 +11,7 @@ class SATReadingSimulator:
     def __init__(self, root: tk.Tk, data_dir: Path | None = None, start_screen=True):
         self.root = root
         self.data_dir = data_dir or Path(__file__).resolve().parent / "data"
-        self.root.title("Digital SAT Reading Simulator")
+        self.root.title("StudyWeave - SAT Practice")
         self.root.geometry("1024x768")
         self.root.minsize(900, 650)
         self.root.configure(bg="#FFFFFF")
@@ -55,7 +55,7 @@ class SATReadingSimulator:
         self.root.configure(bg="#F6F7F9")
         card = tk.Frame(self.root, bg="white", bd=1, relief=tk.SOLID)
         card.place(relx=.5, rely=.5, anchor="center", width=680, height=560)
-        tk.Label(card, text="Digital SAT Simulator", font=("Segoe UI", 25, "bold"), bg="white").pack(pady=(38, 8))
+        tk.Label(card, text="StudyWeave - SAT Practice", font=("Segoe UI", 25, "bold"), bg="white").pack(pady=(38, 8))
         tk.Label(card, text="Choose a test and set the time for each module.", font=("Segoe UI", 12), fg="#4B5563", bg="white").pack(pady=(0, 28))
         form = tk.Frame(card, bg="white")
         form.pack(fill=tk.X, padx=55)

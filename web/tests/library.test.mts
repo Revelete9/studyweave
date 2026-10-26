@@ -1,9 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
-  mergeCatalogWithSavedGroups, encountersFor, errorRateFor, statusFor,
+  mergeCatalogWithSavedGroups, encountersFor, errorRateFor, statusFor, STORAGE_KEY,
   type CatalogMergeWord, type CatalogMergeGroup,
 } from "../src/library.ts";
+
+test("StudyWeave keeps the existing browser storage namespace", () => {
+  assert.equal(STORAGE_KEY, "sat-study-kit.web.v1");
+});
 
 function word(sequence: number, term: string): CatalogMergeWord {
   return {

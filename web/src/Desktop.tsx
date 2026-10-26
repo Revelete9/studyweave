@@ -253,7 +253,7 @@ export default function Desktop() {
   if (!snapshot)
     return (
       <div className="startup">
-        <h1>SAT Study Kit</h1>
+        <h1>StudyWeave</h1>
         <p>{notice || "Opening your local library…"}</p>
         {error && (
           <button onClick={() => void call("load").catch(() => {})}>
@@ -284,8 +284,8 @@ export default function Desktop() {
     <div className="app-shell desktop-shell">
       <aside className="sidebar">
         <div className="brand-block">
-          <div className="brand-mark">W</div>
-          <p className="brand-name">Word Clusters</p>
+          <div className="brand-mark" aria-hidden="true">S</div>
+          <p className="brand-name">StudyWeave</p>
         </div>
         <nav className="primary-nav" aria-label="Main navigation">
           {[

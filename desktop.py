@@ -69,7 +69,7 @@ class DesktopApp:
         self.review_key_time = 0
         self.review_help = False
         self.study_order = tk.StringVar(value="Sequential")
-        root.title("SAT Study Kit")
+        root.title("StudyWeave")
         root.geometry("1180x790")
         root.minsize(1060, 740)
         root.configure(bg=BG)
@@ -112,7 +112,7 @@ class DesktopApp:
         brand = tk.Frame(side, bg=GREEN)
         brand.pack(fill=tk.X, padx=24, pady=(35, 38))
         icon(brand, "book", GREEN, ORANGE, 38).pack(side=tk.LEFT, padx=(0, 13))
-        label(brand, "Study Kit", 21, PAPER, serif=True).pack(anchor="w")
+        label(brand, "StudyWeave", 16, PAPER, serif=True).pack(anchor="w")
         for name, glyph in (("Vocabulary", "book"), ("Organize", "banks"), ("Practice", "practice"), ("Question Banks", "banks")):
             row = tk.Frame(side, bg=GREEN)
             row.pack(fill=tk.X, padx=13, pady=4)
@@ -971,6 +971,6 @@ if __name__ == "__main__":
             # A pythonw launch must not fail invisibly.
             window = tk.Tk()
             window.withdraw()
-            messagebox.showerror("Unable to open SAT Study Kit", str(exc), parent=window)
+            messagebox.showerror("Unable to open StudyWeave", str(exc), parent=window)
             window.destroy()
             raise

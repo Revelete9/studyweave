@@ -478,7 +478,7 @@ export default function App() {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `sat-study-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    anchor.download = `studyweave-backup-${new Date().toISOString().slice(0, 10)}.json`;
     anchor.click();
     URL.revokeObjectURL(url);
     setNotice("Backup exported.");
@@ -495,11 +495,10 @@ export default function App() {
       <aside className="sidebar">
         <div className="brand-block">
           <div className="brand-mark" aria-hidden="true">
-            W
+            S
           </div>
           <div>
-            <p className="brand-name">Word Clusters</p>
-            <p className="brand-subtitle">SAT STUDY KIT</p>
+            <p className="brand-name">StudyWeave</p>
           </div>
         </div>
 

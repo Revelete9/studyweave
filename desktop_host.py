@@ -235,7 +235,7 @@ def main():
         except ModuleNotFoundError as exc:
             raise RuntimeError(
                 "A desktop dependency is missing in this Python environment.\n\n"
-                "On Windows, open 'Launch SAT Study Kit.cmd' to set up and use "
+                "On Windows, open 'Launch StudyWeave.cmd' to set up and use "
                 "the project's own environment.\n\n"
                 f"For this interpreter instead, run:\n\"{sys.executable}\" "
                 "-m pip install -r requirements.txt"
@@ -247,7 +247,7 @@ def main():
         server.serve_forever()
         return
     threading.Thread(target=server.serve_forever, daemon=True).start()
-    webview.create_window("SAT Study Kit", url, width=1380, height=920,
+    webview.create_window("StudyWeave", url, width=1380, height=920,
                           min_size=(1080, 700), background_color="#f3efe6")
     try:
         webview.start()

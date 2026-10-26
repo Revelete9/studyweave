@@ -154,7 +154,7 @@ def parse_group_clipboard(text):
     if (not isinstance(pack, dict) or pack.get("format") != "sat-study-kit/groups"
             or type(pack.get("version")) is not int or pack["version"] != 1
             or set(pack) != {"format", "version", "groups"}):
-        raise ValueError("Use a SAT Study Kit group clipboard (version 1).")
+        raise ValueError("Use a StudyWeave group clipboard (version 1).")
     groups = pack["groups"]
     if not isinstance(groups, list) or not 1 <= len(groups) <= 100:
         raise ValueError("Paste 1–100 groups at a time.")

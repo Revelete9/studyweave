@@ -5,7 +5,7 @@ import sys
 import tempfile
 import threading
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 
@@ -160,13 +160,27 @@ class HostTests(unittest.TestCase):
 
 
 class StartupTests(unittest.TestCase):
+    def test_desktop_window_uses_studyweave_title_and_existing_data_path(self):
+        webview = Mock()
+        with patch.dict(sys.modules, {'webview': webview}), \
+                patch.object(sys, 'argv', ['desktop_host.py']), \
+                patch('desktop_host.Path.exists', return_value=True), \
+                patch('desktop_host.Workspace') as workspace, \
+                patch('desktop_host.make_server', return_value=(Mock(), 'http://localhost/')) as server, \
+                patch('desktop_host.threading.Thread'):
+            main()
+            self.assertEqual(webview.create_window.call_args.args[0], 'StudyWeave')
+            self.assertEqual(workspace.call_args.args[0], Path(__file__).resolve().parents[1] / 'data')
+            webview.start.assert_called_once_with()
+            server.return_value[0].shutdown.assert_called_once_with()
+
     def test_missing_webview_gives_setup_instructions_before_touching_data(self):
         with patch.dict(sys.modules, {'webview': None}), \
                 patch.object(sys, 'argv', ['desktop_host.py']), \
                 patch('desktop_host.Path.exists', return_value=True), \
                 patch('desktop_host.Workspace') as workspace, \
                 patch('desktop_host.make_server') as server:
-            with self.assertRaisesRegex(RuntimeError, 'Launch SAT Study Kit.cmd') as error:
+            with self.assertRaisesRegex(RuntimeError, 'Launch StudyWeave.cmd') as error:
                 main()
             self.assertIn(sys.executable, str(error.exception))
             workspace.assert_not_called()
